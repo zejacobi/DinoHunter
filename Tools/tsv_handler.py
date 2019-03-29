@@ -24,5 +24,5 @@ def get_testing_set(folder: str, prefix: str) -> TaggedNameList:
     gpath += '_*'
     files = glob(gpath)
 
-    return [(f_path.split(f'{prefix}_')[-1].split('.')[0], pd.read_csv(f_path, sep='\t'))
+    return [(f_path.split(f'{prefix}_')[-1].split('.')[0], pd.read_csv(f_path, sep='\t', header=None))
             for f_path in files]
